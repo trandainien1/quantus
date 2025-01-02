@@ -1,10 +1,10 @@
 import torch
 
-try:
-    from .RISE.explanations import RISE
-    print('SUCCESS: rise was successfully imported.')
-except:
-    print('ERROR: rise was not found.')
+# try:
+from .RISE.explanations import RISE
+print('SUCCESS: rise was successfully imported.')
+# except:
+    # print('ERROR: rise was not found.')
 
 class RISEWrapper():
     def __init__(self, model, n_masks=4000, input_size=224, batch_size=2, **kwargs):
