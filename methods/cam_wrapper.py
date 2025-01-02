@@ -6,11 +6,14 @@ from PIL import Image
 from matplotlib import cm
 
 # try:
-from .grad_cam.pytorch_grad_cam import *
-
-print('SUCCESS: cam was successfully imported.')
-# except:
-#     print('ERROR: cam was not found.')
+try:
+    # from .grad_cam.pytorch_grad_cam import *
+    from .grad_cam.pytorch_grad_cam.grad_cam import GradCAM
+    from .grad_cam.pytorch_grad_cam.score_cam import ScoreCAM
+    from .grad_cam.pytorch_grad_cam.grad_cam_plusplus import GradCAMPlusPlus
+    print('SUCCESS: cam was successfully imported.')
+except:
+    print('ERROR: cam was not found.')
 
 methods = \
     {"gradcam": GradCAM,

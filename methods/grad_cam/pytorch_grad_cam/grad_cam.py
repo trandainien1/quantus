@@ -1,6 +1,6 @@
 import numpy as np
 
-from .base_cam import BaseCAM
+from pytorch_grad_cam.base_cam import BaseCAM
 
 
 class GradCAM(BaseCAM):
