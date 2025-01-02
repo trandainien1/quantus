@@ -1,6 +1,8 @@
 import torch
-
+import os 
+dir_path = os.path.dirname(os.path.realpath(__file__))
 # try:
+print("[DEBUG] current path in rise_wrapper: ", dir_path)
 from .RISE.explanations import RISE
 # from .methods.RISE.explanations import RISE
 # from .RISE.explanations import RISE
