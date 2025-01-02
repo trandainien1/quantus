@@ -159,6 +159,7 @@ methods_dict = {
 }
 
 def get_method(name, model, batch_size=16, dataset_name=None):
+    print('[DEBUG] method name: ', name)
     cur_dict = methods_dict[name]
     return cur_dict["class_fn"](model, 
                                 method_name=name, 
