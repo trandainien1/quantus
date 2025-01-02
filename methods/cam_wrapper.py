@@ -4,17 +4,14 @@ import numpy as np
 import torch
 from PIL import Image
 from matplotlib import cm
-import os 
-dir_path = os.path.dirname(os.path.realpath(__file__))
 
 # try:
-print('[DEBUG] current path: ', dir_path) 
-from .pytorch_grad_cam.grad_cam import GradCAM
-from .pytorch_grad_cam.score_cam import ScoreCAM
-from .pytorch_grad_cam.grad_cam_plusplus import GradCAMPlusPlus
+from .grad_cam.pytorch_grad_cam.grad_cam import GradCAM
+from .grad_cam.pytorch_grad_cam.score_cam import ScoreCAM
+from .grad_cam.pytorch_grad_cam.grad_cam_plusplus import GradCAMPlusPlus
 print('SUCCESS: cam was successfully imported.')
 # except:
-    # print('ERROR: cam was not found.')
+#     print('ERROR: cam was not found.')
 
 methods = \
     {"gradcam": GradCAM,
