@@ -1,14 +1,14 @@
 import torch
 import os 
 dir_path = os.path.dirname(os.path.realpath(__file__))
-# try:
-print("[DEBUG] current path in rise_wrapper: ", dir_path)
-from .rise.explanations import RISE
+try:
+# print("[DEBUG] current path in rise_wrapper: ", dir_path)
+    from .rise.explanations import RISE
 # from .methods.RISE.explanations import RISE
 # from .RISE.explanations import RISE
-print('SUCCESS: rise was successfully imported.')
-# except:
-    # print('ERROR: rise was not found.')
+    print('SUCCESS: rise was successfully imported.')
+except:
+    print('ERROR: rise was not found.')
 
 class RISEWrapper():
     def __init__(self, model, n_masks=4000, input_size=224, batch_size=2, **kwargs):
