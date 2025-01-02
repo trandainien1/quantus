@@ -7,14 +7,14 @@ from matplotlib import cm
 import os 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-try:
-    print('[DEBUG] current path: ', dir_path) 
-    from .grad_cam.grad_cam import GradCAM
-    from .grad_cam.score_cam import ScoreCAM
-    from .grad_cam.grad_cam_plusplus import GradCAMPlusPlus
-    print('SUCCESS: cam was successfully imported.')
-except:
-    print('ERROR: cam was not found.')
+# try:
+print('[DEBUG] current path: ', dir_path) 
+from .grad_cam.grad_cam import GradCAM
+from .grad_cam.score_cam import ScoreCAM
+from .grad_cam.grad_cam_plusplus import GradCAMPlusPlus
+print('SUCCESS: cam was successfully imported.')
+# except:
+    # print('ERROR: cam was not found.')
 
 methods = \
     {"gradcam": GradCAM,
