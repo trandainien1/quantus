@@ -6,7 +6,8 @@ from PIL import Image
 from matplotlib import cm
 
 # try:
-from grad_cam.pytorch_grad_cam import *
+from .grad_cam.pytorch_grad_cam import *
+
 print('SUCCESS: cam was successfully imported.')
 # except:
 #     print('ERROR: cam was not found.')
