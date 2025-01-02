@@ -1,7 +1,8 @@
 import torch
 
 # try:
-from .RISE.explanations import RISE
+from methods.RISE.explanations import RISE
+# from .RISE.explanations import RISE
 print('SUCCESS: rise was successfully imported.')
 # except:
     # print('ERROR: rise was not found.')
