@@ -17,8 +17,8 @@ def get_model(name, n_output, dataset=None, checkpoint=None, pretrained=True, me
             # model = timm.create_model(model_name='vit_base_patch16_224', pretrained=True)
             model = timm.create_model(model_name='vit_base_patch16_224', pretrained=True, pretrained_cfg=pretrained_cfg)
 
-    print('------- [MODEL STATEDICT] -------')
-    print(model.state_dict())
+    print('------- [MODEL Default config] -------')
+    print(model.default_cfg)
     print()
  
     return model
