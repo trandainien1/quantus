@@ -21,7 +21,7 @@ class AGCAM:
         self.layer_fusion = layer_fusion
         self.attn_matrix = []
         self.grad_attn = []
-        print('[DEBUG]: Initialize AGC hooks')
+        # print('[DEBUG]: Initialize AGC hooks')
         for layer_num, (name, module) in enumerate(self.model.named_modules()):
             if attention_matrix_layer in name:
                 module.register_forward_hook(self.get_attn_matrix)
@@ -29,13 +29,13 @@ class AGCAM:
                 module.register_full_backward_hook(self.get_grad_attn)
                 
     def get_attn_matrix(self, module, input, output):
-        print('[DEBUG] get attn matrix')
+        # print('[DEBUG] get attn matrix')
         # As stated in Methodology part, in ViT with [class] token, only the first row of the attention matrix is directly connected with the MLP head.
         self.attn_matrix.append(output[:, :, 0:1, :]) # shape: [batch, num_heads, 1, num_patches] 
         
 
     def get_grad_attn(self, module, grad_input, grad_output):
-        print('[DEBUG] get grad attn')
+        # print('[DEBUG] get grad attn')
         # As stated in Methodology part, in ViT with [class] token, only the first row of the attention matrix is directly connected with the MLP head.
         self.grad_attn.append(grad_output[0][:, :, 0:1, :]) # shape: [batch, num_heads, 1, num_patches] 
         
