@@ -1,5 +1,5 @@
 import timm
-import Methods.AGCAM.ViT_for_AGCAM as ViT_Ours
+import AGC_methods.AGCAM.ViT_for_AGCAM as ViT_Ours
 import torch.utils.model_zoo as model_zoo
 MODEL = 'vit_base_patch16_224'
 
