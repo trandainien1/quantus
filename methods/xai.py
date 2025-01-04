@@ -19,7 +19,7 @@ from .integratedgrad_wrapper import IntegratedGradWrapper
 from .lime_wrapper import LimeWrapper
 from .occlusion_wrapper import OcclusionWrapper
 from .smoothgrad_wrapper import SmoothGradWrapper
-
+from .agc_wrapper import AGCWrapper
 print(end='\n')
 
 
@@ -155,6 +155,9 @@ methods_dict = {
         'n_masks': 1024, 
         'batch_size': 128, 
         'tokens_ratio': 0.5
+    },
+    'agc': {
+        'class_fn': AGCWrapper,
     }
 }
 
