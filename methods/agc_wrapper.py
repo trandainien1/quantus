@@ -21,7 +21,7 @@ class AGCAM:
         self.layer_fusion = layer_fusion
         self.attn_matrix = []
         self.grad_attn = []
-
+        print('[DEBUG]: Initialize AGC hooks')
         for layer_num, (name, module) in enumerate(self.model.named_modules()):
             if attention_matrix_layer in name:
                 module.register_forward_hook(self.get_attn_matrix)
