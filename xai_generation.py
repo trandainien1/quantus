@@ -80,7 +80,7 @@ def main():
     upsampling_fn = Resize(dataset[0][0].shape[-2:], antialias=True)
 
     # Get model
-    model = get_model(args.model, n_output, dataset=args.dataset_name)
+    model = get_model(args.model, n_output, dataset=args.dataset_name, method_name=args.method)
     model = model.eval()
     print('Dataset loaded in eval mode.')
 
