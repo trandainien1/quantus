@@ -6,20 +6,20 @@ from PIL import Image
 from matplotlib import cm
 
 # try:
-# try:
+try:
 
 # from pytorch_grad_cam import *
-from .grad_cam.pytorch_grad_cam.grad_cam import GradCAM
-from .grad_cam.pytorch_grad_cam.score_cam import ScoreCAM
-from .grad_cam.pytorch_grad_cam.grad_cam_plusplus import GradCAMPlusPlus
-print('SUCCESS: cam was successfully imported.')
-# except:
-    # print('ERROR: cam was not found.')
+    from .grad_cam.pytorch_grad_cam.grad_cam import GradCAM
+    from .grad_cam.pytorch_grad_cam.score_cam import ScoreCAM
+    from .grad_cam.pytorch_grad_cam.grad_cam_plusplus import GradCAMPlusPlus
+    print('SUCCESS: cam was successfully imported.')
+except:
+    print('ERROR: cam was not found.')
 
-methods = \
-    {"gradcam": GradCAM,
-    "scorecam": ScoreCAM,
-    "gradcam++": GradCAMPlusPlus}
+# methods = \
+#     {"gradcam": GradCAM,
+#     "scorecam": ScoreCAM,
+#     "gradcam++": GradCAMPlusPlus}
 
 def reshape_transform(tensor, height=14, width=14):
     result = tensor[:, 1:, :].reshape(tensor.size(0), height, width, tensor.size(2))
