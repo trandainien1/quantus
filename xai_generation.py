@@ -53,6 +53,7 @@ parser.add_argument('--batch_size',     type=int, default=1,                    
 parser.add_argument('--start_idx',      type=int, default=0,                                help='Starting index for subset metric computation')
 parser.add_argument('--end_idx',        type=int, default=0,                                help='Stop index for subset metric computation')
 parser.add_argument('--metrics',        type=str, default='rollout',                   help='metrics used for benchmarking')
+parser.add_argument('--pretrained_cfg',        type=str, default='orig_in21k_ft_in1k', help='used as pretrained_cfg of timm.create_mdoel')
 
 parser.set_defaults(save_npz=False)
 parser.set_defaults(skip_metrics=False)
@@ -80,7 +81,7 @@ def main():
     upsampling_fn = Resize(dataset[0][0].shape[-2:], antialias=True)
 
     # Get model
-    model = get_model(args.model, n_output, dataset=args.dataset_name, method_name=args.method)
+    model = get_model(args.model, n_output, dataset=args.dataset_name, method_name=args.method, pretrained_cfg=args.pretrained_cfg)
     model = model.eval()
     print('Dataset loaded in eval mode.')
 
