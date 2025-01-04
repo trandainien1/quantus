@@ -1,6 +1,6 @@
 import torch
 from einops.layers.torch import Reduce, Rearrange
-import Methods.AGCAM.ViT_for_AGCAM as ViT_Ours
+import AGC_methods.AGCAM.ViT_for_AGCAM as ViT_Ours
 
 class AGCAM:
     """ Implementation of our method."""
