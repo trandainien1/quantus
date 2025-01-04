@@ -20,6 +20,7 @@ from .lime_wrapper import LimeWrapper
 from .occlusion_wrapper import OcclusionWrapper
 from .smoothgrad_wrapper import SmoothGradWrapper
 from .agc_wrapper import AGCWrapper
+from .better_agc_wrapper import BetterAGCWrapper
 print(end='\n')
 
 
@@ -158,6 +159,9 @@ methods_dict = {
     },
     'agc': {
         'class_fn': AGCWrapper,
+    },
+    'better_agc': {
+        'class_fn': BetterAGCWrapper
     }
 }
 
