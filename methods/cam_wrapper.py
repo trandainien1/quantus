@@ -9,9 +9,10 @@ from matplotlib import cm
 try:
 
 # from pytorch_grad_cam import *
-    from pytorch_grad_cam.grad_cam import GradCAM
-    from pytorch_grad_cam.score_cam import ScoreCAM
-    from pytorch_grad_cam.grad_cam_plusplus import GradCAMPlusPlus
+    from .pytorch_grad_cam.grad_cam import GradCAM
+    from .pytorch_grad_cam.score_cam import ScoreCAM
+    from .pytorch_grad_cam.grad_cam_plusplus import GradCAMPlusPlus
+    
     print('SUCCESS: cam was successfully imported.')
 except:
     print('ERROR: cam was not found.')
