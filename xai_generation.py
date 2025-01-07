@@ -129,7 +129,7 @@ def main():
                 # generate saliency map depending on the choosen method (sum over channels for gradient methods)
                 if args.method in ['scorecam', 'gradcam', 'gradcam++']:
                     saliency_map = method.attribute(X[i].unsqueeze(0), target=y[i])
-                    # saliency_map = saliency_map.reshape((1, *saliency_map.shape))
+                    saliency_map = saliency_map.reshape((1, *saliency_map.shape))
                     saliency_map = torch.tensor(saliency_map)
                 elif args.method in ['lime', 'inputgrad', 'integratedgrad', 'smoothgrad', 'occlusion']:
                     saliency_map = method.attribute(X[i].unsqueeze(0), target=y[i]).sum(1)

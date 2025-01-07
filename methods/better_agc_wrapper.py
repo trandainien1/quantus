@@ -350,7 +350,7 @@ class BetterAGCWrapper():
         self.model = model
         method_name = kwargs.get('method_name', '')
         
-        if method_name == 'better_agc'
+        if method_name == 'better_agc':
             self.method = BetterAGC(self.model)
         elif method_name == 'better_agc_ver2':
             self.method = BetterAGC_ver2(self.model)
