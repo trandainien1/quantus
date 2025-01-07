@@ -298,7 +298,7 @@ class BetterAGC_ver2:
 
     def generate_saliency(self, head_cams, agc_scores):
         # mask = (agc_scores.view(12, 12, 1, 1, 1) * head_cams[0]).sum(axis=(0, 1))
-        mask = ((agc_scores.view(12, 12, 1, 1, 1) + self.gradient[0]) * self.attn[0]).sum(axis=(0, 1))
+        mask = ((agc_scores.view(12, 12, 1, 1, 1) + self.gradient[0]) * head_cams[0]).sum(axis=(0, 1))
 
         mask = mask.squeeze()
         return mask
@@ -348,8 +348,12 @@ class BetterAGC_ver2:
 class BetterAGCWrapper():
     def __init__(self, model, **kwargs):
         self.model = model
-        self.method = BetterAGC(self.model)
-        # self.method = BetterAGC_ver2(self.model)
+        method_name = kwargs.get('method_name', '')
+        
+        if method_name == 'better_agc'
+            self.method = BetterAGC(self.model)
+        elif method_name == 'better_agc_ver2':
+            self.method = BetterAGC_ver2(self.model)
     
     def attribute(self, x, target=None):
         saliency_map = self.method(x, class_idx=target)
