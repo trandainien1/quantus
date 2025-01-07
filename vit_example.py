@@ -12,7 +12,7 @@ from pytorch_grad_cam import GradCAM, \
     EigenGradCAM, \
     LayerCAM, \
     FullGrad
-
+import timm
 from pytorch_grad_cam import GuidedBackpropReLUModel
 from pytorch_grad_cam.utils.image import show_cam_on_image, \
     preprocess_image
@@ -83,8 +83,8 @@ if __name__ == '__main__':
     if args.method not in list(methods.keys()):
         raise Exception(f"method should be one of {list(methods.keys())}")
 
-    model = torch.hub.load('facebookresearch/deit:main',
-                           'deit_tiny_patch16_224', pretrained=True).to(torch.device(args.device)).eval()
+    # model = torch/.hub.load('facebookresearch/deit:main', 'deit_tiny_patch16_224', pretrained=True).to(torch.device(args.device)).eval()
+    model = timm.create_model(model_name='vit_base_patch16_224', pretrained=True)
 
 
     target_layers = [model.blocks[-1].norm1]
