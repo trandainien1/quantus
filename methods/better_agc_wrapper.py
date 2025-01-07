@@ -348,8 +348,8 @@ class BetterAGC_ver2:
 class BetterAGCWrapper():
     def __init__(self, model, **kwargs):
         self.model = model
-        # self.method = BetterAGC(self.model)
-        self.method = BetterAGC_ver2(self.model)
+        self.method = BetterAGC(self.model)
+        # self.method = BetterAGC_ver2(self.model)
     
     def attribute(self, x, target=None):
         saliency_map = self.method(x, class_idx=target)
