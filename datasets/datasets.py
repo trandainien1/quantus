@@ -26,9 +26,10 @@ def get_dataset(name, root):
     if name=='imagenet':
         dataset = ImageNet(path.join(root, name), split=cur_dict['split'], transform=cur_dict['transform'])
     try:
-        subset_indices = pd.read_csv(cur_dict['indices_csv'], header=None)[0].to_numpy()
+        file_name = cur_dict['indices_csv']
+        subset_indices = pd.read_csv(file_name, header=None)[0].to_numpy()
         subset = torch.utils.data.Subset(dataset, subset_indices)
-        print(f'[DATASET] load dataset from files csv {cur_dict['indices_csv']}')
+        print(f'[DATASET] load dataset from files csv {file_name}')
         return subset, cur_dict["n_output"]
     except:
         print(f'[DATASET] load WHOLE dataset')
