@@ -12,7 +12,6 @@ def get_model(name, n_output, dataset=None, checkpoint=None, pretrained=True, me
             state_dict = timm_model.state_dict()
             model = ViT_Ours.create_model(MODEL, pretrained=pretrained, num_classes=n_output)
             model.load_state_dict(state_dict, strict=True)
-<<<<<<< HEAD
         else:
             model = timm.create_model(model_name='vit_base_patch16_224', pretrained=True, pretrained_cfg=pretrained_cfg)
 
@@ -21,9 +20,3 @@ def get_model(name, n_output, dataset=None, checkpoint=None, pretrained=True, me
     print()
  
     return model
-=======
-        else: 
-            model = timm.create_model(model_name='vit_base_patch16_224', pretrained=True, pretrained_cfg='orig_in21k_ft_in1k')
-    
-        return model
->>>>>>> fcd7a9e35a20411ebf5524ddebd66ac3a83db67d
