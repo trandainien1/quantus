@@ -1,11 +1,11 @@
 import torch
 
-try:
+# try:
     # from .tis.tis.tis import TIS
-    from tis.tis import TIS
-    print('SUCCESS: tis was successfully imported.')
-except:
-    print('ERROR: tis was not found.')
+from tis.tis import TIS
+print('SUCCESS: tis was successfully imported.')
+# except:
+#     print('ERROR: tis was not found.')
 
 class TISWrapper:
     def __init__(self, model, n_masks=1024, batch_size=128, tokens_ratio=0.5, **kwargs):
