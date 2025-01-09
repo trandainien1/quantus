@@ -505,7 +505,7 @@ class BetterAGC_ver2:
         # print()
 
         # return saliency_map.detach().cpu(), scores.detach().cpu(), head_cams.detach().cpu()
-        return predicted_class, saliency_map
+        return saliency_map
 
 class BetterAGCWrapper():
     def __init__(self, model, **kwargs):

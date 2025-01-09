@@ -1,7 +1,8 @@
 import torch
 
 try:
-    from .tis.tis.tis import TIS
+    # from .tis.tis.tis import TIS
+    from .tis.tis import TIS
     print('SUCCESS: tis was successfully imported.')
 except:
     print('ERROR: tis was not found.')
