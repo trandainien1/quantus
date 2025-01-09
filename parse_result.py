@@ -103,9 +103,9 @@ transform = {'Monotonicity Nguyen': lambda x: x,
              'Monotonicity Arya': lambda x: x,
             }
     
-metrics =  ['Model Parameter Randomisation']
+metrics =  ['Faithfulness Correlation']
 
-methods = ['random']
+methods = ['agc', 'better_agc', 'better_agc_plus1', 'inputgrad']
 
 if __name__ == '__main__':
 
@@ -118,7 +118,7 @@ if __name__ == '__main__':
 
             for meth in methods:
 
-                csv_name = f"csv/2000idx/{meth}_vit_b16_imagenet_{metr}.csv"
+                csv_name = f"csv/{meth}_vit_b16_imagenet_{metr}.csv"
 
                 df = pd.read_csv(csv_name, header=None)
                 arr_values = transform[metr](df).values.flatten()
