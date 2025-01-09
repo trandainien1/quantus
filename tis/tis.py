@@ -144,7 +144,7 @@ class TIS:
         encoder_activations = encoder_activations[1:].T
 
         # Create clusters with kmeans
-        kmeans = KMeans(n_clusters=self.n_masks, mode='euclidean', verbose=self.verbose)
+        kmeans = KMeans(n_clusters=self.n_masks, mode='euclidean', verbose=not self.verbose)
         kmeans.fit(encoder_activations)
 
         # Use kmeans centroids as basis for masks
