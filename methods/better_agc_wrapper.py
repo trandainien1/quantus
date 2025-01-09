@@ -341,8 +341,6 @@ class BetterAGC_ver2:
             layer_fusion (str): type of layer-wise aggregation (default: 'sum')
         """
         self.model = model
-        self.timm_model = timm.create_model('vit_base_patch16_224', pretrained=True, num_classes=1000).to('cuda')
-        self.timm_model.eval()
         self.head = None
         self.width = None
         self.head_fusion = head_fusion
@@ -442,14 +440,14 @@ class BetterAGC_ver2:
             # print(torch.cuda.memory_allocated()/1024**2)
 
             with torch.no_grad():
-                output_mask = self.timm_model(m)
+                output_mask = self.model(m)
             
             # print("After get output from model: ")
             # print(torch.cuda.memory_allocated()/1024**2)
     
             agc_scores = output_mask[:, prediction.item()] - output_truth[0, prediction.item()]
-            # agc_scores = torch.sigmoid(agc_scores)
-            agc_scores = F.softmax(agc_scores)
+            agc_scores = torch.sigmoid(agc_scores)
+            # agc_scores = F.softmax(agc_scores)
     
             agc_scores = agc_scores.reshape(head_cams[0].shape[0], head_cams[0].shape[1])
 
@@ -507,7 +505,7 @@ class BetterAGC_ver2:
         # print()
 
         # return saliency_map.detach().cpu(), scores.detach().cpu(), head_cams.detach().cpu()
-        return saliency_map
+        return predicted_class, saliency_map
 
 class BetterAGCWrapper():
     def __init__(self, model, **kwargs):
