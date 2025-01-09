@@ -192,8 +192,8 @@ def main():
                 A = A.reshape((1, *A.shape))
                 A = upsampling_fn(A)
     
-            # try:
-            scores_saliency = get_results(model,
+            try:
+                scores_saliency = get_results(model,
                                         name = args.metrics,
                                         x_batch = X,
                                         y_batch = y,
@@ -201,10 +201,10 @@ def main():
                                         perturb_baseline = perturb_baseline,
                                         device = device,
                                         xai_method = XAI_for_Quantus)
-            scores.append(scores_saliency)
-            # except:
-            #     print('ouch')
-            #     pass
+                scores.append(scores_saliency)
+            except:
+                print('ouch')
+                pass
             
 
         # Stack results by batches if the results are dict, else concatenate them by images
