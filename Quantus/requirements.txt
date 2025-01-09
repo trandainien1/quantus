@@ -14,3 +14,4 @@ termcolor
 torch
 torchvision
 grad-cam
+fast-pytorch-kmeans==0.1.6
