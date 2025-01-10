@@ -493,7 +493,7 @@ class BetterAGC_ver2:
             prediction=predicted_class, output_truth=output_truth
         )
 
-        print('[DEBUG] score shape: ', scores.shape)
+        # print('[DEBUG] score shape: ', scores.shape)
 
         # print("After generate scores: ")
         # print(torch.cuda.memory_allocated()/1024**2)
