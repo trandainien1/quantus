@@ -1,9 +1,9 @@
 import torch
 
 try:
-    from .chefer.baselines.ViT.ViT_explanation_generator import LRP
-    from .chefer.baselines.ViT.ViT_LRP import VisionTransformer, _conv_filter, _cfg
-    from .chefer.baselines.ViT.helpers import load_pretrained
+    from chefer.baselines.ViT.ViT_explanation_generator import LRP
+    from chefer.baselines.ViT.ViT_LRP import VisionTransformer, _conv_filter, _cfg
+    from chefer.baselines.ViT.helpers import load_pretrained
     from timm.models.vision_transformer import default_cfgs as vit_cfgs
     print('SUCCESS: chefer was successfully imported.')
 except:
