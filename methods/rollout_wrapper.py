@@ -1,10 +1,10 @@
 import torch
 
-# try:
-from vit_explain.vit_rollout import VITAttentionRollout
-    # print('SUCCESS: vit_explain was successfully imported.')
-# except:
-    # print('ERROR: vit_explain was not found.')
+try:
+    from vit_explain.vit_rollout import VITAttentionRollout
+    print('SUCCESS: vit_explain was successfully imported.')
+except:
+    print('ERROR: vit_explain was not found.')
 
 class RolloutWrapper():
     def __init__(self, model, discard_ratio=0.9, head_fusion='mean', **kwargs):
