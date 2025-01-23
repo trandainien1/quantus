@@ -1,7 +1,7 @@
 import torch
 
 # try:
-from .vit_explain.vit_rollout import VITAttentionRollout
+from vit_explain.vit_rollout import VITAttentionRollout
     # print('SUCCESS: vit_explain was successfully imported.')
 # except:
     # print('ERROR: vit_explain was not found.')
