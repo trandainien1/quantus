@@ -105,7 +105,7 @@ transform = {'Monotonicity Nguyen': lambda x: x,
     
 metrics =  ['Faithfulness Correlation']
 
-methods = ['agc', 'better_agc', 'better_agc_plus1', 'inputgrad', 'scorecam']
+methods = ['agc', 'better_agc', 'better_agc_plus1', 'inputgrad', 'scorecam', 'better_agc_ver2']
 
 if __name__ == '__main__':
 
