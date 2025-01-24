@@ -103,7 +103,7 @@ transform = {'Monotonicity Nguyen': lambda x: x,
              'Monotonicity Arya': lambda x: x,
             }
     
-metrics =  ['Faithfulness Correlation']
+metrics =  ['Faithfulness Estimate']
 
 methods = ['agc', 'better_agc', 'better_agc_plus1', 'inputgrad', 'scorecam', 'better_agc_ver2']
 
