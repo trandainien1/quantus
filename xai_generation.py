@@ -49,11 +49,13 @@ parser.add_argument('--gpu',            dest='gpu', action='store_true',        
 parser.add_argument('--cpu',            dest='gpu', action='store_false',                   help='use cpu instead of gpu')
 parser.add_argument('--seed',           type=int, default=123456,                           help='Random seed')
 parser.add_argument('--limit_val',      type=int, default=0,                                help='Limit validation size. Default to 0 => no limitation')
+parser.add_argument('--val_start_idx',  type=int, default=0,                                help='start idx for creating heatmaps')
+parser.add_argument('--val_end_idx',    type=int, default=0,                                help='end idx for creating heatmaps')
 parser.add_argument('--batch_size',     type=int, default=1,                                help='Batch size')
 parser.add_argument('--start_idx',      type=int, default=0,                                help='Starting index for subset metric computation')
 parser.add_argument('--end_idx',        type=int, default=0,                                help='Stop index for subset metric computation')
-parser.add_argument('--metrics',        type=str, default='rollout',                   help='metrics used for benchmarking')
-parser.add_argument('--pretrained_cfg',        type=str, default='orig_in21k_ft_in1k', help='used as pretrained_cfg of timm.create_mdoel')
+parser.add_argument('--metrics',        type=str, default='rollout',                        help='metrics used for benchmarking')
+parser.add_argument('--pretrained_cfg',        type=str, default='orig_in21k_ft_in1k',      help='used as pretrained_cfg of timm.create_mdoel')
 
 parser.set_defaults(save_npz=False)
 parser.set_defaults(skip_metrics=False)
@@ -102,6 +104,8 @@ def main():
         subset_indices  = np.random.randint(0, high=(len(dataset)-1), size=min(args.limit_val, len(dataset)))
         subset = torch.utils.data.Subset(dataset, subset_indices)
         print(f'Dataset limited to {args.limit_val} images.')
+    elif args.val_start_idx != 0:
+        subset = torch.utils.data.Subset(dataset, list(range(args.val_start_idx, args.val_end_idx)))
     else:
         subset = dataset
 
