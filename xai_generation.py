@@ -104,7 +104,7 @@ def main():
         subset_indices  = np.random.randint(0, high=(len(dataset)-1), size=min(args.limit_val, len(dataset)))
         subset = torch.utils.data.Subset(dataset, subset_indices)
         print(f'Dataset limited to {args.limit_val} images.')
-    elif args.val_start_idx != 0:
+    elif args.val_end_idx != 0:
         subset = torch.utils.data.Subset(dataset, list(range(args.val_start_idx, args.val_end_idx)))
         print(f'Dataset limited from {args.val_start_idx} to {args.val_end_idx}')
     else:
