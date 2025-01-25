@@ -1,6 +1,5 @@
-agc Faithfulness Correlation : 0.338
-better_agc Faithfulness Correlation : 0.313
-better_agc_plus1 Faithfulness Correlation : 0.334
-inputgrad Faithfulness Correlation : 0.3
-scorecam Faithfulness Correlation : 0.298
-better_agc_ver2 Faithfulness Correlation : 0.302
+agc Faithfulness Estimate : 0.5
+better_agc Faithfulness Estimate : 0.443
+better_agc_plus1 Faithfulness Estimate : 0.46
+scorecam Faithfulness Estimate : 0.38
+tis Faithfulness Estimate : 0.48
