@@ -4,6 +4,7 @@ import torchvision.transforms as transforms
 import numpy as np
 import timm 
 import torch.nn.functional as F
+from fast_pytorch_kmeans import KMeans
 
 class BetterAGC:
     def __init__(self, model, attention_matrix_layer = 'before_softmax', attention_grad_layer = 'after_softmax', head_fusion='sum', layer_fusion='sum'):
