@@ -103,7 +103,7 @@ transform = {'Monotonicity Nguyen': lambda x: x,
              'Monotonicity Arya': lambda x: x,
             }
     
-metrics =  ['Sparseness']
+metrics =  ['Complexity']
 
 methods = ['agc', 'better_agc', 'better_agc_plus1', 'better_agc_cluster', 'scorecam', 'tis']
 
