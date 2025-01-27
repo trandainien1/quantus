@@ -195,7 +195,7 @@ class Complexity(Metric):
         self.normalise = self.kwargs.get("normalise", True)
         self.normalise_func = self.kwargs.get("normalise_func", normalise_by_negative)
         self.default_plot_func = Callable
-        self.disable_warnings = self.kwargs.get("disable_warnings", False)
+        self.disable_warnings = self.kwargs.get("disable_warnings", True)
         self.last_results = []
         self.all_results = []
 
