@@ -103,9 +103,9 @@ transform = {'Monotonicity Nguyen': lambda x: x,
              'Monotonicity Arya': lambda x: x,
             }
     
-metrics =  ['Faithfulness Estimate']
+metrics =  ['Pixel-Flipping']
 
-methods = ['agc', 'better_agc', 'better_agc_plus1', 'scorecam', 'tis']
+methods = ['agc', 'better_agc', 'better_agc_plus1', 'better_agc_cluster', 'scorecam', 'tis']
 
 if __name__ == '__main__':
 

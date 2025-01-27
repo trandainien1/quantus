@@ -1,5 +1,6 @@
-agc Faithfulness Estimate : 0.5
-better_agc Faithfulness Estimate : 0.443
-better_agc_plus1 Faithfulness Estimate : 0.46
-scorecam Faithfulness Estimate : 0.38
-tis Faithfulness Estimate : 0.48
+agc Pixel-Flipping : 0.114
+better_agc Pixel-Flipping : 0.121
+better_agc_plus1 Pixel-Flipping : 0.128
+better_agc_cluster Pixel-Flipping : 0.12
+scorecam Pixel-Flipping : 0.166
+tis Pixel-Flipping : 0.102
