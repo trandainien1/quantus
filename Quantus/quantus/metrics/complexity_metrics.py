@@ -453,7 +453,7 @@ class EffectiveComplexity(Metric):
 
             if self.normalise:
                 a = self.normalise_func(a)
-
+            print('[DEBUG]: a: ', a)
             self.last_results.append(int(np.sum(a > self.eps)))  # int operation?
 
         self.all_results.append(self.last_results)

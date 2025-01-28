@@ -1,1 +1,1 @@
-from .xai import get_method
+rom .xai import get_method

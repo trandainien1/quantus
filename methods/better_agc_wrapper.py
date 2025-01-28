@@ -330,7 +330,6 @@ class BetterAGC_plus1:
 
         return saliency_map
 
-
 class BetterAGC_ver2:
     def __init__(self, model, attention_matrix_layer = 'before_softmax', attention_grad_layer = 'after_softmax', head_fusion='sum', layer_fusion='sum'):
         """
