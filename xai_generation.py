@@ -192,7 +192,7 @@ def main():
         for (X, y), A in tqdm(xai_loader, desc=f'Computing metrics using {args.metrics}'):
             device = 'cuda' if args.gpu else 'cpu'
             
-            if args.npz_checkpoint in ['btt_vit_b16_imagenet.npz', 'bth_vit_b16_imagenet.npz', 'tam_vit_b16_imagenet.npz']:
+            if args.npz_checkpoint in ['agc_vit_b16_imagenet.npz', 'btt_vit_b16_imagenet.npz', 'bth_vit_b16_imagenet.npz', 'tam_vit_b16_imagenet.npz']:
                 A = torch.tensor(A)
                 A = A.reshape((1, *A.shape))
                 A = upsampling_fn(A)
