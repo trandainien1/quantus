@@ -189,7 +189,7 @@ def main():
 
         start_metric = time.time()
 
-        for (X, y), A in tqdm(xai_loader, desc=f'Computing metrics using {args.metrics}'):
+        for (X, y), A in tqdm(xai_loader, desc=f'{args.method}- Computing metrics using {args.metrics}'):
             device = 'cuda' if args.gpu else 'cpu'
             
             if args.npz_checkpoint in ['agc_vit_b16_imagenet.npz', 'btt_vit_b16_imagenet.npz', 'bth_vit_b16_imagenet.npz', 'tam_vit_b16_imagenet.npz']:
