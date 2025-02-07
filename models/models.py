@@ -14,6 +14,7 @@ def get_model(name, n_output, dataset=None, checkpoint=None, pretrained=True, me
             model = ViT_Ours.create_model(MODEL, pretrained=pretrained, num_classes=n_output)
             model.load_state_dict(state_dict, strict=True)
         elif method_name == 'tam':
+            print('[DEBUG] HERE')
             model = LRP_vit_base_patch16_224('cuda', num_classes=1000).to('cuda')
             timm_model = timm.create_model(model_name='vit_base_patch16_224', pretrained=True, pretrained_cfg=pretrained_cfg)
             state_dict = timm_model.state_dict()
