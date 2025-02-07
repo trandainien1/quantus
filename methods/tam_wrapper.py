@@ -1,13 +1,13 @@
 import torch
 
-try:
-    from transition_attention_maps.baselines.ViT.interpret_methods import InterpretTransformer
-    from transition_attention_maps.baselines.ViT.ViT_new import VisionTransformer, _conv_filter, _cfg
-    from transition_attention_maps.baselines.ViT.helpers import load_pretrained
-    from timm.models.vision_transformer import default_cfgs as vit_cfgs
-    print('SUCCESS: tam was successfully imported.')
-except:
-    print('ERROR: tam was not found.')
+# try:
+from transition_attention_maps.baselines.ViT.interpret_methods import InterpretTransformer
+from transition_attention_maps.baselines.ViT.ViT_new import VisionTransformer, _conv_filter, _cfg
+from transition_attention_maps.baselines.ViT.helpers import load_pretrained
+from timm.models.vision_transformer import default_cfgs as vit_cfgs
+print('SUCCESS: tam was successfully imported.')
+# except:
+#     print('ERROR: tam was not found.')
 
 def vit_base_patch16_224(pretrained=True, model_name="vit_base_patch16_224", pretrained_cfg='orig_in21k_ft_in1k', **kwargs):
     model = VisionTransformer(patch_size=16, embed_dim=768, depth=12, num_heads=12, mlp_ratio=4, qkv_bias=True, **kwargs)
