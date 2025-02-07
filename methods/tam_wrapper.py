@@ -41,5 +41,7 @@ class TAMWrapper:
 
     def attribute(self, x, target=None):
         with torch.enable_grad():
-            saliency_map = self.method.generate_LRP(x, index=target, start_layer=self.start_layer, steps=self.steps)
+            saliency_map = self.method.generate_LRP(x, index=target, start_layer=self.start_layer, 
+                                                    # steps=self.steps
+                                                    )
             return saliency_map.reshape(14, 14)
