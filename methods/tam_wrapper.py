@@ -1,9 +1,9 @@
 import torch
 
 # try:
-from transition_attention_maps.baselines.ViT.ViT_explanation_generator import LRP
-from transition_attention_maps.baselines.ViT.ViT_new import VisionTransformer, _conv_filter, _cfg
-from transition_attention_maps.baselines.ViT.helpers import load_pretrained
+from tam.baselines.ViT.ViT_explanation_generator import LRP
+from tam.baselines.ViT.ViT_new import VisionTransformer, _conv_filter, _cfg
+from tam.baselines.ViT.helpers import load_pretrained
 from timm.models.vision_transformer import default_cfgs as vit_cfgs
 print('SUCCESS: tam was successfully imported.')
 # except:
