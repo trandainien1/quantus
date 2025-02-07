@@ -1,7 +1,7 @@
 import torch
 
 # try:
-from transition_attention_maps.baselines.ViT.interpret_methods import InterpretTransformer
+from transition_attention_maps.baselines.ViT.ViT_explanation_generator import LRP
 from transition_attention_maps.baselines.ViT.ViT_new import VisionTransformer, _conv_filter, _cfg
 from transition_attention_maps.baselines.ViT.helpers import load_pretrained
 from timm.models.vision_transformer import default_cfgs as vit_cfgs
@@ -28,7 +28,7 @@ class TAMWrapper:
         self.model.eval()
         assert isinstance(self.model, VisionTransformer), '[ASSERT] Transformer architecture not recognised.'
 
-        self.method = InterpretTransformer(self.model)
+        self.method = LRP(self.model)
         self.start_layer = start_layer
         self.steps = steps
         
