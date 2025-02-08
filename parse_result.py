@@ -103,10 +103,11 @@ transform = {'Monotonicity Nguyen': lambda x: x,
              'Monotonicity Arya': lambda x: x,
             }
     
-metrics =  ['EffectiveComplexity']
+metrics =  ['Selectivity']
 
 methods = ['agc', 'better_agc', 'better_agc_plus1', 'scorecam', 'tis', 
-        #    'chefer1', 'rollout'
+           'chefer1', 'rollout', 
+        #    'better_agc_plus5'
            ]
 
 if __name__ == '__main__':
@@ -129,7 +130,7 @@ if __name__ == '__main__':
 
                 results[metr] = norm_arr_values
 
-                mean_values = round(norm_arr_values.mean(axis=0), 3)
+                mean_values = round(norm_arr_values.mean(axis=0), 4)
 
                 res = f"{meth} {metr} : {mean_values}\n"
                 f.write(res)
