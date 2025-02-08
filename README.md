@@ -9,7 +9,7 @@ This github is used for Faithfulness evaluation of ScoreAGC
 
 Our ScoreAGC is implemented in methods\better_agc_wrapper.py
 
-# Github references
+## Github references
 
 - Special thanks to the following githubs to support our evaluations and references. 
 
