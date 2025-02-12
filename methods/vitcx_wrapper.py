@@ -24,8 +24,9 @@ class ViTCXWrapper:
         """
         self.model = model
         self.batch_size = batch_size
+        
 
-    def __call__(self, x, class_idx=None):
+    def exec_method(self, x, class_idx=None):
         """
         Call the saliency method
         :param x: input image tensor
@@ -52,3 +53,7 @@ class ViTCXWrapper:
             saliency = saliency.detach()
             del model
             return saliency
+    def attribute(self, x, target=None):
+        with torch.enable_grad():
+            saliency_map = self.exec_method(x, class_idx=target)
+            return saliency_map.detach().cpu()
