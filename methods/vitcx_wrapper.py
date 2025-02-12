@@ -11,6 +11,7 @@ from .vitcx.ViT_CX import ViT_CX, reshape_function_vit
 from torchvision.models import VisionTransformer as VisionVIT
 from timm.models.vision_transformer import VisionTransformer as TimmVIT
 
+print('SUCCESS: ViT-CX loaded successfully')
 
 class ViTCXWrapper:
     """
