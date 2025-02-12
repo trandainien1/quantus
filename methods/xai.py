@@ -21,6 +21,7 @@ from .occlusion_wrapper import OcclusionWrapper
 from .smoothgrad_wrapper import SmoothGradWrapper
 from .agc_wrapper import AGCWrapper
 from .better_agc_wrapper import BetterAGCWrapper
+from .vitcx_wrapper import ViTCXWrapper
 print(end='\n')
 
 
@@ -162,6 +163,9 @@ methods_dict = {
     },
     'better_agc': {
         'class_fn': BetterAGCWrapper
+    },
+    'vitcx': {
+        'class_fn': ViTCXWrapper
     }
 }
 
