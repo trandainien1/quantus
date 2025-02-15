@@ -91,7 +91,7 @@ def ViT_CX(model,image,target_layer,target_category=None,distance_threshold=0.1,
     distance = 1 - similarity
 
     # Apply the  AgglomerativeClustering with a given distance_threshold
-    cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=distance_threshold,affinity='precomputed', linkage='complete') 
+    cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=distance_threshold,metric='precomputed', linkage='complete') 
     cluster.fit(distance.cpu())
     cluster_num=len(set(cluster.labels_))
     # print('number of masks after the clustering:'+str(cluster_num))
