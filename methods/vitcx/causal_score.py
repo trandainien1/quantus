@@ -21,7 +21,7 @@ class causal_score(nn.Module):
         H=self.input_size[0]
         W=self.input_size[1]
         masks=self.masks
-        print(f'Mask shape in forward function: {masks.shape}')
+        # print(f'Mask shape in forward function: {masks.shape}')
         # Generate the inverse of masks, i.e., 1-M_i
         masks_inverse=torch.from_numpy(np.repeat((1-self.masks.cpu().numpy())[:, :, np.newaxis,:], 3, axis=2)).cuda()
         

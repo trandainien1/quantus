@@ -94,7 +94,7 @@ def ViT_CX(model,image,target_layer,target_category=None,distance_threshold=0.1,
     cluster = AgglomerativeClustering(n_clusters = None, distance_threshold=distance_threshold,affinity='precomputed', linkage='complete') 
     cluster.fit(distance.cpu())
     cluster_num=len(set(cluster.labels_))
-    print('number of masks after the clustering:'+str(cluster_num))
+    # print('number of masks after the clustering:'+str(cluster_num))
 
     # Use the sum of a clustering as a representation of the cluster
     cluster_labels=cluster.labels_
